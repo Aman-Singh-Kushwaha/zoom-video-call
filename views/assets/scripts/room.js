@@ -1,21 +1,21 @@
 const socket = io("/");
 
 const videoGrid = document.getElementById("video-grid");
-const roomId = document.getElementById('room-id');
+const roomId = document.getElementById("room-id");
 
 // Displaying Room Info
-const currentRoomId = window.location.pathname.split('/')[1];
+const currentRoomId = window.location.pathname.split("/")[1];
 roomId.innerText = `Room Id: ${currentRoomId}`;
 
 // Copy to clipboard
 const copyRoomId = () => {
-  const el = document.createElement('input');
+  const el = document.createElement("input");
   el.value = currentRoomId;
   document.body.appendChild(el);
   el.select();
-  document.execCommand('copy');
+  document.execCommand("copy");
   document.body.removeChild(el);
-}
+};
 
 const myVideo = document.createElement("video");
 myVideo.classList.add("video");
@@ -24,7 +24,7 @@ myVideo.muted = true;
 let peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
-  port: "3000",
+  port: "443"
 });
 
 // Ask user access for media access
@@ -161,8 +161,7 @@ const videoOnOff = () => {
   }
 };
 
-
-// Leave Meeting 
+// Leave Meeting
 const leaveMeeting = () => {
   window.location.replace(`${window.location.origin}`);
-}
+};
