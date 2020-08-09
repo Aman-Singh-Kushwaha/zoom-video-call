@@ -10,9 +10,19 @@
 .main-videoes {
   flex-grow: 1;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   background-color: #111111;
+}
+.room-id {
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  color: #111111;
+  position: absolute;
+  padding: 10px;
+  background-color: #fff;
 }
 .main-controls {
   display: flex;

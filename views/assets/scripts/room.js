@@ -1,6 +1,21 @@
 const socket = io("/");
 
 const videoGrid = document.getElementById("video-grid");
+const roomId = document.getElementById('room-id');
+
+// Displaying Room Info
+const currentRoomId = window.location.pathname.split('/')[1];
+roomId.innerText = `Room Id: ${currentRoomId}`;
+
+// Copy to clipboard
+const copyRoomId = () => {
+  const el = document.createElement('input');
+  el.value = currentRoomId;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+}
 
 const myVideo = document.createElement("video");
 myVideo.classList.add("video");
