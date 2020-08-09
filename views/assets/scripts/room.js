@@ -1,5 +1,8 @@
 const socket = io("/");
 
+const peers = {}
+
+
 const videoGrid = document.getElementById("video-grid");
 const roomId = document.getElementById("room-id");
 
@@ -40,7 +43,6 @@ navigator.mediaDevices
 
     //2. Answer Call
     peer.on("call", (call) => {
-      console.log(call);
       call.answer(stream);
       const video = document.createElement("video");
       //video.muted = true;
@@ -52,6 +54,10 @@ navigator.mediaDevices
     });
 
     socket.on("user-connected", (userId) => connectToNewUser(userId, stream));
+
+    socket.on('user-disconnected', userId => {
+      if(peers[userId]) peers[userId].close();
+    })
   });
 
 // Connect to the new user
@@ -65,6 +71,11 @@ const connectToNewUser = (userId, stream) => {
   call.on("stream", (userVideoStream) => {
     addVideoStream(video, userVideoStream);
   });
+  call.on('close', () => {
+    video.remove();
+  });
+
+  peers[userId] = call;
 };
 
 peer.on("open", (id) => {
