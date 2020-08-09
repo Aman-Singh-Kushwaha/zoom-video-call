@@ -8,5 +8,6 @@
   width: 400px;
   object-fit: cover;
   border-radius: 5px;
+  margin: 10px;
   box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.75);
 }
