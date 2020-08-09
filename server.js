@@ -24,7 +24,13 @@ io.on('connection', socket => {
   socket.on('join-room', (roomId, userId) => {
     socket.join(roomId);
     socket.to(roomId).broadcast.emit('user-connected', userId);
+
+    socket.on('message', message => {
+      io.to(roomId).emit('create-message', message);
+    })
   })
-})
+});
+
+
 const PORT = 3000; 
 server.listen(PORT);
