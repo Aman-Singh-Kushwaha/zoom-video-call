@@ -160,3 +160,9 @@ const videoOnOff = () => {
     setVideoOnButton();
   }
 };
+
+
+// Leave Meeting 
+const leaveMeeting = () => {
+  window.location.replace(`${window.location.origin}`);
+}

@@ -82,6 +82,8 @@
   overflow-y: scroll;
 }
 .message {
+  display: flex;
+  align-items: center;
   margin: 2px 0;
   padding: 5px 10px;
 }
@@ -108,4 +110,15 @@
 }
 .btn-off {
   color: #eb534b;
+}
+.user-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-weight: bold;
 }
