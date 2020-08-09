@@ -1,13 +1,64 @@
-#video-grid {
+.container {
+  height: 100vh;
   display: flex;
+}
+.container-left {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+}
+.main-videoes {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111111;
+}
+.main-controls {
+  display: flex;
+  justify-content: space-between;
+  color: #D2D2D2;
+  background-color: #1c1e20;
+}
+.main-controls-blocks {
+  display: flex;
+}
+.main-controls-btn {
+  padding: 10px 8px;
+  margin: 0 5px;
+  display: flex;
+  cursor: pointer;
+  min-width: 60px;
+  align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
+.main-controls-btn:hover {
+  color: #bbbbbb;
+  border-radius: 5px;
+  background-color: #343434;
+}
+.main-controls-btn i {
+  font-size: 20px;
+}
+.main-controls-btn span {
+  margin-top: 6px;
+  font-size: 14px;
+}
+.main-controls-btn .leave-meeting {
+  font-size: 16px;
+  color: #EB534B;
+}
+.container-right {
+  flex: 0.2;
+}
+
+
 .video {
   transform: rotateY(180deg);
-  height: 350px;
-  width: 400px;
+  height: 200px;
+  width: 300px;
   object-fit: cover;
   border-radius: 5px;
-  margin: 10px;
-  box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.75);
+  margin: 0 5px;
 }
