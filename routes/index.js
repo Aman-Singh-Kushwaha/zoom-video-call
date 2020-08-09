@@ -1,9 +1,7 @@
 const router = require("express").Router();
 
-const { v4: uuidv4 } = require('uuid'); 
-
 router.get("/", (req, res) => {
-  res.redirect(`/${uuidv4()}`);
+  res.render('main');
 });
 
 router.get('/:room', (req, res) => {
