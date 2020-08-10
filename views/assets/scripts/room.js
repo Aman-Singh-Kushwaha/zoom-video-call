@@ -1,5 +1,6 @@
 const socket = io("/");
 
+const PEER_PORT = 443;
 const peers = {}
 
 
@@ -27,7 +28,7 @@ myVideo.muted = true;
 let peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
-  port: "443"
+  port: PEER_PORT
 });
 
 // Ask user access for media access
